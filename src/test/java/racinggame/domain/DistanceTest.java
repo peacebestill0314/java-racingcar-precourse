@@ -17,7 +17,7 @@ public class DistanceTest {
     @Test
     @DisplayName("위치는 전진 또는 멈춤으로 결정된다")
     void Valid() {
-        Distance distance = new Distance();;
+        Distance distance = new Distance();
         distance.move();
         assertThat(distance).isEqualTo(new Distance(1));
     }

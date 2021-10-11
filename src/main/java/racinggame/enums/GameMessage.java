@@ -2,7 +2,9 @@ package racinggame.enums;
 
 public enum GameMessage {
 
-    SUCCESS_RESPONSE("성공");
+    INPUT_GET_NAME("경주할 자동차 이름을 입력하세요.(이름은(,) 기준으로 구분)"),
+    INPUT_GET_COUNT("시도할 횟수는 몇회인가요?"),
+    OUTPUT_RESULT("실행 결과");
 
     private String message;
 
@@ -10,7 +12,7 @@ public enum GameMessage {
         this.message = message;
     }
 
-    public String getMessage() {
+    public String message() {
         return message;
     }
 }

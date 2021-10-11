@@ -6,6 +6,8 @@ import java.util.Objects;
 
 public class Name {
 
+    public static final int NAME_LIMIT = 5;
+
     private final String name;
 
     public Name(String name) {
@@ -14,8 +16,8 @@ public class Name {
     }
 
     private void validationLength(String name) {
-        if(name.length() > 5) {
-            throw new IllegalArgumentException(ErrorMessage.ERROR_CAR_LENGTH.getMessage());
+        if(name.length() > NAME_LIMIT) {
+            throw new IllegalArgumentException(ErrorMessage.ERROR_CAR_LENGTH.message());
         }
     }
 

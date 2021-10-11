@@ -9,16 +9,27 @@ public class Cars {
     private final List<Car> cars;
 
     public Cars(String names) {
-        this.cars = createCars(names);
+        this.cars = createCars(names, () -> true);
     }
 
-    private List<Car> createCars(String names) {
+    public Cars(String names, MovingStrategy movingStrategy) {
+        this.cars = createCars(names, movingStrategy);
+
+    }
+
+    private List<Car> createCars(String names, MovingStrategy movingStrategy) {
         String[] splitedNames = names.split(",");
         List<Car> cars = new ArrayList<>();
         for (String name : splitedNames) {
-            cars.add(new Car(name));
+            cars.add(new Car(name, movingStrategy));
         }
         return cars;
+    }
+
+    public void move() {
+        for (Car car : cars) {
+            car.move();
+        }
     }
 
     @Override
@@ -32,5 +43,16 @@ public class Cars {
     @Override
     public int hashCode() {
         return Objects.hash(cars);
+    }
+
+    @Override
+    public String toString() {
+        return "Cars{" +
+                "cars=" + cars +
+                '}';
+    }
+
+    public List<Car> getCars() {
+        return cars;
     }
 }

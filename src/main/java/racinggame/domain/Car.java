@@ -6,14 +6,26 @@ public class Car {
 
     private final Name name;
     private final Distance distance;
+    private final MovingStrategy strategy;
 
     public Car(String name, int distance) {
-        this.name = new Name(name);
-        this.distance = new Distance(distance);
+        this(name, distance, () -> true);
     }
 
-    public Car(String name) {
-        this(name, 0);
+    public Car(String name, MovingStrategy movingStrategy) {
+        this(name, 0, movingStrategy);
+    }
+
+    public Car(String name, int distance, MovingStrategy strategy) {
+        this.name = new Name(name);
+        this.distance = new Distance(distance);
+        this.strategy = strategy;
+    }
+
+    public void move(){
+        if(strategy.movable()){
+            distance.move();
+        }
     }
 
     @Override
@@ -28,4 +40,14 @@ public class Car {
     public int hashCode() {
         return Objects.hash(name, distance);
     }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "name=" + name +
+                ", distance=" + distance +
+                ", strategy=" + strategy +
+                '}';
+    }
+
 }

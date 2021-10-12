@@ -5,7 +5,6 @@ import racinggame.view.OutputView;
 
 public class RacingGame {
 
-
     private final int count;
     private final Cars cars;
 

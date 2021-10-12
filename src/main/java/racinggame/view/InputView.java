@@ -11,7 +11,6 @@ public class InputView {
 
     public int getTryCount() {
         String input = ConsoleResponse.responseMessage(PlayMessage.INPUT_GET_TRY_COUNT_MESSAGE);
-
         try {
             validationNull(input);
             validationInt(input);

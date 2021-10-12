@@ -23,15 +23,15 @@ public class InputView {
     }
 
     private void validationInt(String input) {
-        try{
-          Integer.parseInt(input);
+        try {
+            Integer.parseInt(input);
         } catch (IllegalArgumentException e) {
             throw new IllegalArgumentException(PlayMessage.ERROR_INT.message());
         }
     }
 
     private void validationNull(String inputResult) {
-        if(validationNullCheck(inputResult)){
+        if (validationNullCheck(inputResult)) {
             throw new IllegalArgumentException(PlayMessage.ERROR_EMPTY.message());
         }
     }
@@ -60,7 +60,7 @@ public class InputView {
     }
 
     private void validationLengthCheck(String splitedName) {
-        if(splitedName.length() > LENGTH_LIMIT) {
+        if (splitedName.length() > LENGTH_LIMIT) {
             throw new IllegalArgumentException(PlayMessage.ERROR_CAR_LENGTH.message());
         }
     }

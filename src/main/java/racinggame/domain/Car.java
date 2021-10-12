@@ -22,8 +22,8 @@ public class Car {
         this.strategy = strategy;
     }
 
-    public void move(){
-        if(strategy.movable()){
+    public void move() {
+        if (strategy.movable()) {
             distance.move();
         }
     }

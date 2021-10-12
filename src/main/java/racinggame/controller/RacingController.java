@@ -17,9 +17,9 @@ public class RacingController {
     }
 
     public void start() {
-        int count = inputView.inputGetTryCount();
-        Cars cars = new Cars(inputView.inputGetName(), new RandomMovingStrategy());
-        RacingGame playGame = new RacingGame(count, cars);
-
+        Cars cars = new Cars(inputView.getCarName(), new RandomMovingStrategy());
+        RacingGame playGame = new RacingGame(inputView.getTryCount(), cars);
+        playGame.play();
     }
+
 }

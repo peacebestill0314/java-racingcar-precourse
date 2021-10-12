@@ -28,6 +28,14 @@ public class Car {
         }
     }
 
+    public Name name() {
+        return name;
+    }
+
+    public Distance distance() {
+        return distance;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

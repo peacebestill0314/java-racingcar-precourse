@@ -15,4 +15,11 @@ public class CarsTest {
         assertThat(cars).isEqualTo(new Cars("yeon,ju,eun,bi"));
     }
 
+    @Test
+    @DisplayName("자동차들을 전진 시킨다")
+    void move() {
+        String input = "yeon,ju,eun,bi";
+        Cars cars = new Cars(input, new RandomMovingStrategy());
+        cars.move();
+    }
 }

@@ -1,7 +1,5 @@
 package racinggame.domain;
 
-import racinggame.enums.ErrorMessage;
-
 import java.util.Objects;
 
 public class Name {
@@ -11,14 +9,11 @@ public class Name {
     private final String name;
 
     public Name(String name) {
-        validationLength(name);
         this.name = name.trim();
     }
 
-    private void validationLength(String name) {
-        if(name.length() > NAME_LIMIT) {
-            throw new IllegalArgumentException(ErrorMessage.ERROR_CAR_LENGTH.message());
-        }
+    public String name() {
+        return name;
     }
 
     @Override

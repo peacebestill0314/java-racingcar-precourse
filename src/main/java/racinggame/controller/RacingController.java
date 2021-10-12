@@ -1,6 +1,7 @@
 package racinggame.controller;
 
 import racinggame.domain.Cars;
+import racinggame.domain.Count;
 import racinggame.domain.RacingGame;
 import racinggame.domain.RandomMovingStrategy;
 import racinggame.view.InputView;
@@ -18,7 +19,9 @@ public class RacingController {
 
     public void start() {
         Cars cars = new Cars(inputView.getCarName(), new RandomMovingStrategy());
-        RacingGame playGame = new RacingGame(inputView.getTryCount(), cars);
+        Count count = new Count(inputView.getTryCount());
+        RacingGame playGame = new RacingGame(count, cars);
+
         playGame.play();
     }
 

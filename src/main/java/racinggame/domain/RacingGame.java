@@ -5,17 +5,21 @@ import racinggame.view.OutputView;
 
 public class RacingGame {
 
-    private final int count;
+    private final Count count;
     private final Cars cars;
 
     public RacingGame(int count, Cars cars) {
+        this(new Count(count), cars);
+    }
+
+    public RacingGame(Count count, Cars cars) {
         this.count = count;
         this.cars = cars;
     }
 
     public Cars play() {
-        System.out.println(PlayMessage.OUTPUT_RESULT);
-        for (int i = 0; i < count; i++) {
+        System.out.println(PlayMessage.OUTPUT_RESULT.message());
+        for (int i = 0; i < count.count(); i++) {
             cars.move();
             OutputView.resultPrint(cars);
         }

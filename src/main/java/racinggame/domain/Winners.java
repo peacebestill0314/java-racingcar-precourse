@@ -6,9 +6,12 @@ import java.util.Objects;
 
 public class Winners {
 
+    public static final String COMMA = ",";
+    public static final String FINAL_WINNER = "최종 우승자는 ";
+    public static final String FINAL_WINNER_IS = " 입니다.";
     private final List<Car> winners;
 
-    private Winners(List<Car> winners) {
+    public Winners(List<Car> winners) {
         this.winners = winners;
     }
 
@@ -30,6 +33,27 @@ public class Winners {
         }
     }
 
+    public void printWinners() {
+        StringBuilder printMessage = new StringBuilder();
+        printMessage.append(FINAL_WINNER);
+        for (int index = 0; index < winners.size(); index++) {
+            printMessage.append(winners.get(index).name().name());
+            addComma(printMessage, index, winners.size());
+        }
+        printMessage.append(FINAL_WINNER_IS);
+        System.out.println(printMessage);
+    }
+
+    private void addComma(StringBuilder builder, int index, int size) {
+        if (index != size - 1) {
+            builder.append(COMMA);
+        }
+    }
+
+    public List<Car> winners() {
+        return winners;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -48,22 +72,5 @@ public class Winners {
         return "Winners{" +
                 "winners=" + winners +
                 '}';
-    }
-
-    public void getNames() {
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("최종 우승자는 ");
-        for (int index = 0; index < winners.size(); index++) {
-            stringBuilder.append(winners.get(index).name().name());
-            addComma(stringBuilder, index, winners.size());
-        }
-        stringBuilder.append(" 입니다.");
-        System.out.println(stringBuilder);
-    }
-
-    private void addComma(StringBuilder builder, int index, int size) {
-        if (index != size - 1) {
-            builder.append(",");
-        }
     }
 }

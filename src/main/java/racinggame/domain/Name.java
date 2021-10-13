@@ -4,10 +4,25 @@ import java.util.Objects;
 
 public class Name {
 
+    public static final int LIMIT_LENGTH = 5;
     private final String name;
 
     public Name(String name) {
+        validationLength(name);
+        validationNull(name);
         this.name = name.trim();
+    }
+
+    private void validationLength(String name) {
+        if (name.length() > LIMIT_LENGTH) {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    private void validationNull(String name) {
+        if(Objects.isNull(name) || name.isEmpty()) {
+            throw new IllegalArgumentException();
+        }
     }
 
     public String name() {

@@ -28,6 +28,12 @@ public class Car {
         }
     }
 
+    public void move(boolean check) {
+        if(check){
+            distance.move();
+        }
+    }
+
     public Name name() {
         return name;
     }

@@ -4,29 +4,36 @@ import racinggame.domain.Car;
 import racinggame.domain.Cars;
 import racinggame.domain.Distance;
 import racinggame.domain.Winners;
+import racinggame.enums.PlayMessage;
 
 
 public class OutputView {
 
-    public static final String MARK = " : ";
+    public static final String NAME_MARK = " : ";
+    public static final String DISTANCE_MARK = "-";
 
     public static void resultPrint(Cars cars) {
         for (Car car : cars.getCars()) {
-            ConsoleResponse.responseMessage(car.name().name() + MARK + resultDistance(car.distance()));
+            ConsoleResponse.responseMessage(car.name().name() + NAME_MARK + getDistanceResultMark(car.distance()));
         }
         ConsoleResponse.responseMessage("");
     }
 
-    private static String resultDistance(Distance distance) {
+    private static String getDistanceResultMark(Distance distance) {
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < distance.distance(); i++) {
-            stringBuilder.append("-");
+            stringBuilder.append(DISTANCE_MARK);
         }
         return stringBuilder.toString();
     }
 
-    public void winnerPrint(Cars cars, Distance distance) {
-        Winners winners = Winners.create(cars, distance);
-        winners.getNames();
+    public static void resultTitlePrint() {
+        ConsoleResponse.responseMessage("");
+        ConsoleResponse.responseMessage(PlayMessage.OUTPUT_RESULT.message());
+    }
+
+    public void winnerPrint(Cars cars, Distance maxDistance) {
+        Winners winners = Winners.create(cars, maxDistance);
+        winners.printWinners();
     }
 }

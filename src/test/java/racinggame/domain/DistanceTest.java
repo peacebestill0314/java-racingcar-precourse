@@ -15,7 +15,7 @@ public class DistanceTest {
     }
 
     @Test
-    @DisplayName("위치는 전진 또는 멈춤으로 결정된다")
+    @DisplayName("위치를 이동시킨다")
     void Valid() {
         Distance distance = new Distance();
         distance.move();

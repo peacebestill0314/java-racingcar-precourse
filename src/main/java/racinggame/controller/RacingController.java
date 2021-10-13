@@ -21,8 +21,7 @@ public class RacingController {
         Cars cars = new Cars(inputView.getCarName(), new RandomMovingStrategy());
         Count count = new Count(inputView.getTryCount());
         RacingGame playGame = new RacingGame(count, cars);
-
-        playGame.play();
+        outputView.winnerPrint(playGame.play(), playGame.maxDistance());
     }
 
 }

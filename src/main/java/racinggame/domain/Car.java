@@ -58,4 +58,7 @@ public class Car {
                 '}';
     }
 
+    public boolean isWinner(Distance maxDistance) {
+        return distance.equals(maxDistance);
+    }
 }

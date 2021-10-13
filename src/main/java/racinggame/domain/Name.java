@@ -4,8 +4,6 @@ import java.util.Objects;
 
 public class Name {
 
-    public static final int NAME_LIMIT = 5;
-
     private final String name;
 
     public Name(String name) {

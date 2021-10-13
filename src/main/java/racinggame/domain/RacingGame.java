@@ -1,6 +1,5 @@
 package racinggame.domain;
 
-import racinggame.enums.PlayMessage;
 import racinggame.view.OutputView;
 
 public class RacingGame {

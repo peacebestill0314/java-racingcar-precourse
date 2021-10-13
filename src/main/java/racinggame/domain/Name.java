@@ -20,7 +20,7 @@ public class Name {
     }
 
     private void validationNull(String name) {
-        if(Objects.isNull(name) || name.isEmpty()) {
+        if (Objects.isNull(name) || name.isEmpty()) {
             throw new IllegalArgumentException();
         }
     }

@@ -29,7 +29,7 @@ public class Car {
     }
 
     public void move(boolean check) {
-        if(check){
+        if (check) {
             distance.move();
         }
     }

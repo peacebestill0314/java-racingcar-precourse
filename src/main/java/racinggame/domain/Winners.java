@@ -50,10 +50,6 @@ public class Winners {
         }
     }
 
-    public List<Car> winners() {
-        return winners;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

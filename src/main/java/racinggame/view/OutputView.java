@@ -11,12 +11,13 @@ public class OutputView {
 
     public static final String NAME_MARK = " : ";
     public static final String DISTANCE_MARK = "-";
+    public static final String BLANK = "";
 
     public static void resultPrint(Cars cars) {
         for (Car car : cars.getCars()) {
             ConsoleResponse.responseMessage(car.name().name() + NAME_MARK + getDistanceResultMark(car.distance()));
         }
-        ConsoleResponse.responseMessage("");
+        ConsoleResponse.responseMessage(BLANK);
     }
 
     private static String getDistanceResultMark(Distance distance) {
@@ -28,7 +29,7 @@ public class OutputView {
     }
 
     public static void resultTitlePrint() {
-        ConsoleResponse.responseMessage("");
+        ConsoleResponse.responseMessage(BLANK);
         ConsoleResponse.responseMessage(PlayMessage.OUTPUT_RESULT.message());
     }
 

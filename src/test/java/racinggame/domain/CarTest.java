@@ -15,7 +15,7 @@ public class CarTest {
     }
 
     @Test
-    @DisplayName("자동차를 이동한다")
+    @DisplayName("자동차를 전진 시킨다")
     void move() {
         Car car = new Car("yeon", 0);
         car.move();

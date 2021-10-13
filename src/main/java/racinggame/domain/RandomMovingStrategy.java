@@ -1,10 +1,11 @@
 package racinggame.domain;
 
-import java.util.Random;
+import nextstep.utils.Randoms;
 
 public class RandomMovingStrategy implements MovingStrategy {
 
-    public static final int LIMIT_BOUND = 10;
+    public static final int LIMIT_MIN_NUMBER = 0;
+    public static final int LIMIT_MAX_NUMBER = 9;
     public static final int CRITERION_NUMBER = 4;
 
     @Override
@@ -14,7 +15,6 @@ public class RandomMovingStrategy implements MovingStrategy {
     }
 
     private int randomCount() {
-        Random random = new Random();
-        return random.nextInt(LIMIT_BOUND);
+        return Randoms.pickNumberInRange(LIMIT_MIN_NUMBER, LIMIT_MAX_NUMBER);
     }
 }

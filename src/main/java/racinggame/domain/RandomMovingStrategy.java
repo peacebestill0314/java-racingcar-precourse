@@ -10,8 +10,7 @@ public class RandomMovingStrategy implements MovingStrategy {
 
     @Override
     public boolean movable() {
-        int result = randomCount();
-        return result >= CRITERION_NUMBER;
+        return randomCount() >= CRITERION_NUMBER;
     }
 
     private int randomCount() {

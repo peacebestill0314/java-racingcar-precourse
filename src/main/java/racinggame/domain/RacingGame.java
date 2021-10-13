@@ -23,7 +23,7 @@ public class RacingGame {
         return cars;
     }
 
-    public Distance maxDistance(){
+    public Distance maxDistance() {
         Distance distance = new Distance();
         for (Car car : cars.getCars()) {
             distance = new Distance(Math.max(distance.distance(), car.distance().distance()));

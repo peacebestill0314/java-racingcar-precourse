@@ -8,7 +8,7 @@ import racinggame.domain.Winners;
 
 public class OutputView {
 
-    public static final String MARK= " : ";
+    public static final String MARK = " : ";
 
     public static void resultPrint(Cars cars) {
         for (Car car : cars.getCars()) {

@@ -25,7 +25,7 @@ public class Winners {
     }
 
     private static void addWinner(Distance maxDistance, Car car, List<Car> winners) {
-        if(car.isWinner(maxDistance)) {
+        if (car.isWinner(maxDistance)) {
             winners.add(car);
         }
     }
@@ -55,22 +55,15 @@ public class Winners {
         stringBuilder.append("최종 우승자는 ");
         for (int index = 0; index < winners.size(); index++) {
             stringBuilder.append(winners.get(index).name().name());
-            postfixSplitter(stringBuilder, index, winners.size());
+            addComma(stringBuilder, index, winners.size());
         }
         stringBuilder.append(" 입니다.");
         System.out.println(stringBuilder);
     }
 
-    private static void postfixSplitter(StringBuilder builder, int index, int size) {
-        if (index != size -1) {
+    private void addComma(StringBuilder builder, int index, int size) {
+        if (index != size - 1) {
             builder.append(",");
         }
     }
 }
-
-
-    /*StringBuilder stringBuilder = new StringBuilder();
-        for (int i = 0; i < distance.distance(); i++) {
-        stringBuilder.append("-");
-        }
-        return stringBuilder.toString();*/

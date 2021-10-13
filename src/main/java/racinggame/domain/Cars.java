@@ -14,7 +14,6 @@ public class Cars {
 
     public Cars(String names, MovingStrategy movingStrategy) {
         this.cars = createCars(names, movingStrategy);
-
     }
 
     private List<Car> createCars(String names, MovingStrategy movingStrategy) {
@@ -30,6 +29,10 @@ public class Cars {
         for (Car car : cars) {
             car.move();
         }
+    }
+
+    public List<Car> getCars() {
+        return cars;
     }
 
     @Override
@@ -50,9 +53,5 @@ public class Cars {
         return "Cars{" +
                 "cars=" + cars +
                 '}';
-    }
-
-    public List<Car> getCars() {
-        return cars;
     }
 }
